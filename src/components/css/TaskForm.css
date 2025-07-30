@@ -1,0 +1,107 @@
+/* Стили для контейнера формы */
+.task-form {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Расстояние между элементами внутри формы */
+}
+
+/* Стили для слайдера "Доход/Расход" */
+.type-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.type-slider input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.type-slider label {
+  cursor: pointer;
+  width: 50px;
+  height: 26px;
+  background: #ef4444; /* Красный цвет для расхода */
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color .2s ease;
+}
+
+.type-slider label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.2s;
+}
+
+.type-slider input:checked + label {
+  background: #22c55e; /* Зеленый цвет для дохода */
+}
+
+.type-slider input:checked + label:after {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
+
+/* Стили для группы полей ввода */
+.inputs-group {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr; /* Группа и задача шире, чем сумма */
+  gap: 15px;
+}
+
+.inputs-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box; /* Чтобы padding не влиял на ширину */
+}
+
+/* Стили для чекбокса "Фиксированная сумма" */
+.fixed-amount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.fixed-amount input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* Стили для кнопки */
+.task-form button[type="submit"] {
+  padding: 12px 20px;
+  background-color: #3b82f6; /* Синий цвет */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.task-form button[type="submit"]:hover {
+  background-color: #2563eb;
+}
