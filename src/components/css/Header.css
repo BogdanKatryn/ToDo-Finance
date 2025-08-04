@@ -1,0 +1,23 @@
+.main-header {
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+  }
+  
+  .main-header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 0;
+    
+    background: linear-gradient(to right, #60a5fa, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    color: transparent;
+  }
+  
+  .main-header p {
+    font-size: 1.1rem;
+    color: #d1d5db; 
+    margin-top: 8px;
+    font-weight: 300;
+  }

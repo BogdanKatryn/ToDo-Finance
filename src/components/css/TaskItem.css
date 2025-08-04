@@ -1,51 +1,29 @@
 .task-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 15px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .task-item:last-child {
-    border-bottom: none; /* Убираем границу у последнего элемента */
-  }
-  
-  .task-info {
-    display: flex;
-    flex-direction: column; /* Имя и подтаски будут друг под другом */
-  }
-  
-  .task-name {
-    font-size: 16px;
-  }
-  
-  .task-controls {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Расстояние между суммой и кнопками */
-  }
-  
-  .task-amount {
-    font-weight: bold;
-    font-size: 16px;
-    min-width: 80px; /* Чтобы ширина не скакала */
-    text-align: right;
-  }
-  
-  .control-buttons {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .control-buttons button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: 18px;
-    padding: 5px;
-    transition: transform 0.2s ease;
-  }
-  
-  .control-buttons button:hover {
-    transform: scale(1.2);
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 15px;
+  border-bottom: 1px solid #475569; 
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-name {
+  color: #e2e8f0; 
+  font-size: 16px;
+}
+
+.task-amount {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.task-amount.income {
+  color: #22c55e;
+}
+
+.task-amount.expense {
+  color: #ef4444;
+}

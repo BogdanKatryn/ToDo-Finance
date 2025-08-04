@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from './components/Header.jsx';
 import TaskForm from './components/TaskForm.jsx';
-import TaskList from './components/TaskList.jsx'; // 1. Импортируем наш новый компонент
-import './App.css'; // Не забываем про файл стилей
+import TaskList from './components/TaskList.jsx';
+import './App.css';
 
 function App() {
   const [taskGroups, setTaskGroups] = useState([]);
@@ -36,7 +36,6 @@ function App() {
     <div>
       <Header />
       <TaskForm onAddTask={handleAddTask} />
-      {/* 2. Используем TaskList и передаем ему все наши группы через проп */}
       <TaskList groups={taskGroups} />
     </div>
   );

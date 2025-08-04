@@ -1,10 +1,9 @@
 /* src/App.css */
 body {
-  background-color: #282c34; /* Цвет фона на случай, если картинка не загрузится */
-  /*background-image: url('/background.jpg'); /* Путь к картинке в папке public */
+  background-color: #0d1326;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Фон не будет скроллиться вместе с контентом */
+  background-attachment: fixed;
   color: #333;
 }
 
@@ -12,9 +11,7 @@ body {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #1e293b;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
-/* ... сюда можно будет добавлять стили для формы ... */

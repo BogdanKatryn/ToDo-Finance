@@ -1,11 +1,16 @@
-// src/components/Header.jsx
+
+import './css/Header.css'
 
 function Header() {
     return (
-      <header>
-        <center><h1>Todo Finance</h1></center>
+      <header className="main-header">
+        <center>
+          <h1>Todo Finance</h1>
+          <p>Керуй своїми фінансами оегко та ефективно.</p>
+        </center>
+        
       </header>
     );
   }
   
-  export default Header; // Эта строка позволяет использовать компонент в других файлах
+  export default Header;
