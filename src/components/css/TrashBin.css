@@ -1,0 +1,102 @@
+.trash-bin-card {
+  max-width: 800px;
+  margin: 0 auto 20px auto; /* Изменен margin, чтобы не было отступа сверху */
+  padding: 20px 25px;
+  background-color: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #475569;
+}
+.trash-toggle-btn{
+    width: 800px;
+    margin: 10px;
+}
+
+.trash-bin-header {
+  color: #e2e8f0;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #475569;
+  padding-bottom: 10px;
+}
+
+.trash-empty-message {
+  color: #94a3b8;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.trash-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trash-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #334155;
+  border-radius: 6px;
+}
+
+.trash-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.trash-item-name {
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.trash-item-group {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.trash-item-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-trash {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-trash.restore { color: #22c55e; }
+.btn-trash.restore:hover { background-color: rgba(34, 197, 94, 0.1); }
+
+.btn-trash.delete-final { color: #ef4444; }
+.btn-trash.delete-final:hover { background-color: rgba(239, 68, 68, 0.1); }
+
+/* --- НОВЫЕ СТИЛИ --- */
+.trash-bin-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #475569;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-empty-trash {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-empty-trash:hover {
+  background-color: #dc2626;
+}

@@ -9,7 +9,7 @@ const listStyle = {
   boxSizing: 'border-box',
 };
 
-function TaskList({ groups }) {
+function TaskList({ groups, editingTaskId, onSetEditMode, onUpdateTask, onCancelEdit, onToggleTask, onDeleteTask }) {
   if (!groups || groups.length === 0) {
     return <p style={{ textAlign: 'center', color: '#94a3b8' }}>Пока нет ни одной задачи. Добавьте первую!</p>;
   }
@@ -17,7 +17,16 @@ function TaskList({ groups }) {
   return (
     <div style={listStyle}>
       {groups.map(group => (
-        <TaskGroup key={group.id} group={group} />
+        <TaskGroup
+          key={group.id}
+          group={group}
+          editingTaskId={editingTaskId}
+          onSetEditMode={onSetEditMode}
+          onUpdateTask={onUpdateTask}
+          onCancelEdit={onCancelEdit}
+          onToggleTask={onToggleTask}
+          onDeleteTask={onDeleteTask}
+        />
       ))}
     </div>
   );

@@ -1,0 +1,76 @@
+/* Обертка для формы, чтобы создать отступ и рамку */
+.edit-form-wrapper {
+  padding: 15px;
+  /* Синяя рамка, как на скриншоте, но без верхней части */
+  border: 2px solid #3b82f6;
+  border-top: none;
+  border-radius: 0 0 10px 10px; /* Скругляем только нижние углы */
+  background-color: #3e4f66;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Стили для полей ввода в форме редактирования */
+.edit-form .edit-input {
+  flex-grow: 1; /* Поле с названием занимает все доступное место */
+  background-color: #1e293b;
+  border: 1px solid #64748b;
+  color: white;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.edit-form .edit-input.amount {
+  flex-grow: 0;
+  width: 100px; /* Фиксированная ширина для поля суммы */
+}
+
+.edit-form .edit-input:focus {
+  outline: none;
+  border-color: #006aff;
+}
+
+/* Контейнер для кнопок "Отмена" и "Сохранить" */
+.form-actions {
+  display: flex;
+  justify-content: flex-end; /* Прижимаем кнопки к правому краю */
+  gap: 10px;
+}
+
+.btn-icon {
+  background: none;
+  border-radius: 6px;
+  border: 1px solid #64748b;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-icon.cancel {
+  color: #ef4444; /* Красный цвет для иконки отмены */
+}
+.btn-icon.cancel:hover {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-icon.save {
+  color: #22c55e; /* Зеленый цвет для иконки сохранения */
+}
+.btn-icon.save:hover {
+  background-color: #22c55e;
+  color: white;
+}

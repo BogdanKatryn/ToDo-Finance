@@ -1,0 +1,116 @@
+/* Обертка для всей формы редактирования с вашими стилями */
+.edit-task-form-wrapper {
+    padding: 15px;
+    margin: 10px;
+    border: 2px solid #006aff; /* Ваш цвет рамки */
+    border-radius: 10px; /* Ваши скругленные углы */
+    background-color: #1e293b; /* Ваш фон */
+  }
+  
+  .edit-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Ваше расстояние между элементами */
+  }
+  
+  /* Блок для выравнивания полей */
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+  .form-row .edit-input {
+    flex: 1; 
+  }
+  
+  /* Общие стили для полей ввода с вашими правками */
+  .edit-task-form .edit-input {
+    background-color: #334155; /* Ваш фон для полей */
+    border: 1px solid #64748b;
+    color: white;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold; /* Ваш жирный шрифт */
+  }
+  .edit-task-form .edit-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+  }
+  
+  /* Стили для анимированного переключателя */
+  .edit-task-form .type-selector {
+    position: relative; 
+    display: flex;
+    background-color: #334155; /* Ваш фон */
+    border-radius: 8px;
+    padding: 4px;
+  }
+  .edit-task-form .sliding-background {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    border-radius: 6px;
+    background-color: #ef4444; 
+    transition: all 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  .edit-task-form .type-selector.income-active .sliding-background {
+    transform: translateX(100%);
+    background-color: #22c55e;
+  }
+  .edit-task-form .type-selector button {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: bold; /* Ваш жирный шрифт */
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Стили для чекбокса */
+  .edit-task-form .fixed-amount {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #cbd5e1;
+  }
+  
+  /* --- ИЗМЕНЕНИЕ СТИЛЕЙ ДЛЯ КНОПОК-ИКОНОК --- */
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .btn-icon {
+    background: none;
+    border-radius: 6px;
+    /* Убираем рамку по умолчанию, будем добавлять ее при наведении */
+    border: 1px solid transparent; 
+    padding: 6px; /* Немного уменьшим паддинг */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .btn-icon.cancel { 
+    color: #94a3b8; /* Нейтральный цвет для крестика */
+  }
+  .btn-icon.cancel:hover { 
+    color: #ef4444; /* Становится красным при наведении */
+    background-color: rgba(239, 68, 68, 0.1); /* Легкий красный фон */
+    border-color: #ef4444;
+  }
+  .btn-icon.save { 
+    color: #22c55e; /* Зеленый цвет для иконки сохранения */
+  }
+  .btn-icon.save:hover { 
+    background-color: rgba(34, 197, 94, 0.1); /* Легкий зеленый фон */
+    border-color: #22c55e;
+  }

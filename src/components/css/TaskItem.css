@@ -1,29 +1,124 @@
+.task-item-wrapper {
+  /* Пустой контейнер-обертка */
+}
+
+/* Основной контейнер одной задачи */
 .task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 15px;
-  border-bottom: 1px solid #475569; 
+  border-bottom: 1px solid #475569;
+  transition: all 0.2s ease;
 }
 
-.task-item:last-child {
-  border-bottom: none;
+/* Состояние, когда задача редактируется */
+.task-item.is-editing {
+  border: 2px solid #006aff;
+}
+
+/* Стили для выполненной задачи */
+.task-item.is-completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.task-item.is-completed .task-status-toggle {
+  background-color: #00ff5e;
+  border-color: #22c55e;
+}
+.task-item.is-completed .task-status-toggle::after {
+  content: '✔';
+  color: white;
+  font-size: 14px;
+}
+
+/* Левая и правая части задачи */
+.task-main-info, .task-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Стили для радио-кнопки выполнения */
+.task-status-toggle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #64748b;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0; /* Запрещаем кнопке сжиматься */
+}
+.task-status-toggle:hover {
+  border-color: #94a3b8;
+}
+
+/* Стили для заблокированной кнопки */
+.task-status-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+.task-status-toggle:disabled:hover {
+  border-color: #64748b;
 }
 
 .task-name {
-  color: #e2e8f0; 
+  color: #e2e8f0;
   font-size: 16px;
+  font-weight: 500;
+}
+
+/* Стили для иконки скрепки */
+.fixed-icon {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  margin-left: -5px;
 }
 
 .task-amount {
   font-weight: bold;
   font-size: 16px;
 }
-
 .task-amount.income {
   color: #22c55e;
 }
-
 .task-amount.expense {
   color: #ef4444;
+}
+
+/* Контейнер для кнопок-иконок */
+.task-actions {
+  display: flex;
+  gap: 8px;
+  opacity: 1; /* ВАШЕ ИЗМЕНЕНИЕ: иконки всегда видны */
+  transition: opacity 0.2s ease;
+}
+
+/* --- ВАШИ НОВЫЕ СТИЛИ ДЛЯ КНОПОК --- */
+/* Общий базовый стиль для обеих кнопок */
+.action-btn-edit,
+.action-btn-delete {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease; /* Плавный переход цвета */
+}
+
+/* Цвет при наведении для кнопки редактирования */
+.action-btn-edit:hover {
+  color: #3b82f6;
+}
+
+/* Цвет при наведении для кнопки удаления */
+.action-btn-delete:hover {
+  color: #ff0000;
 }
