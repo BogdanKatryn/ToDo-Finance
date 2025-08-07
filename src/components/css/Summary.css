@@ -1,36 +1,33 @@
 .summary-card {
-    max-width: 800px;
-    margin: 0 auto 20px auto; /* Отступ снизу, чтобы отделить от формы */
-    padding: 20px 25px;
-    background-color: #334155; /* Тот же цвет, что и у полей ввода */
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .summary-label {
-    font-size: 18px;
-    font-weight: bold;
-    color: #cbd5e1; /* Светло-серый цвет для текста */
-  }
-  
-  .summary-value {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  /* Классы для цвета суммы */
-  .summary-value.positive {
-    color: #22c55e; /* Зеленый */
-  }
-  
-  .summary-value.negative {
-    color: #ef4444; /* Красный */
-  }
-  
-  .summary-value.zero {
-    color: #e2e8f0; /* Белый для нуля */
-  }
+  /* Убрали max-width, чтобы карточка занимала всю ширину контейнера */
+  padding: 20px 25px;
+  background-color: #334155;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.summary-value.positive {
+  color: #22c55e;
+}
+
+.summary-value.negative {
+  color: #ef4444;
+}
+
+.summary-value.zero {
+  color: #e2e8f0;
+}

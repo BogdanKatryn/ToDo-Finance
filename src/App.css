@@ -9,45 +9,44 @@ body {
   background-color: #111827;
 }
 
-/* --- ИЗМЕНЕНИЕ: Теперь это общая обертка для всей секции корзины --- */
-.trash-section-wrapper {
+/* --- ИЗМЕНЕНИЕ: Новый общий контейнер --- */
+.main-controls-wrapper {
   max-width: 800px;
   margin: 0 auto 20px auto;
-  padding: 0 10px;
-}
-
-.trash-toggle-wrapper {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 15px; /*Расстояние между элементами */
 }
 
-.trash-toggle-btn {
-  display: inline-flex;
+/* --- ИЗМЕНЕНИЕ: Новые стили для кнопки-бара корзины --- */
+.trash-toggle-bar {
+  background-color: #334155;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  background: none;
-  border: 1px solid #475569;
-  color: #cbd5e1;
-  padding: 8px 15px;
-  border-radius: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #334155;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 14px;
-  font-weight: 500;
-}
-.trash-toggle-btn:hover {
-  border-color: #94a3b8;
-  color: white;
+  box-sizing: border-box;
 }
 
-.trash-counter {
-  background-color: #ef4444;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+.trash-bar-label {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 12px;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.trash-bar-counter {
+  background-color: #ff0000;
+  color: white;
+  border-radius: 6px; /* Делаем счетчик квадратным */
+  padding: 2px 6px;
+  font-size: 13px;
+  font-weight: bold;
 }

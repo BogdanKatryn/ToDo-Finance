@@ -6,7 +6,7 @@ function Header() {
       <header className="main-header">
         <center>
           <h1>Todo Finance</h1>
-          <p>Керуй своїми фінансами оегко та ефективно.</p>
+          <p>Керуй своїми фінансами легко та ефективно.</p>
         </center>
         
       </header>

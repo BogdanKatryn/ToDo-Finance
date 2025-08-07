@@ -5,7 +5,7 @@ const listStyle = {
   width: '100%',
   maxWidth: '800px',
   margin: '30px auto',
-  padding: '0 10px',
+  padding: '0 0px',
   boxSizing: 'border-box',
 };
 

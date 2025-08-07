@@ -15,6 +15,7 @@ function App() {
   const [trash, setTrash] = useState([]);
   const [isTrashVisible, setIsTrashVisible] = useState(false);
 
+  // Все ваши функции-обработчики (handleAddTask, handleUpdateTask и т.д.) остаются без изменений
   const handleAddTask = (newTask) => {
     const taskWithStatus = { ...newTask, isCompleted: false };
     const existingGroup = taskGroups.find(group => group.name.toLowerCase() === taskWithStatus.group.toLowerCase());
@@ -26,22 +27,13 @@ function App() {
       setTaskGroups([...taskGroups, newGroup]);
     }
   };
-
   const handleUpdateTask = (taskId, updatedData) => {
-    setTaskGroups(taskGroups.map(group => ({
-      ...group,
-      tasks: group.tasks.map(task => (task.id === taskId ? { ...task, ...updatedData } : task))
-    })));
+    setTaskGroups(taskGroups.map(group => ({ ...group, tasks: group.tasks.map(task => (task.id === taskId ? { ...task, ...updatedData } : task)) })));
     setEditingTaskId(null);
   };
-
   const handleToggleTask = (taskId) => {
-    setTaskGroups(taskGroups.map(group => ({
-      ...group,
-      tasks: group.tasks.map(task => (task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task))
-    })));
+    setTaskGroups(taskGroups.map(group => ({ ...group, tasks: group.tasks.map(task => (task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task)) })));
   };
-
   const handleDeleteTask = (taskIdToDelete) => {
     let taskToTrash;
     const updatedGroups = taskGroups.map(group => {
@@ -50,31 +42,24 @@ function App() {
       return { ...group, tasks: group.tasks.filter(task => task.id !== taskIdToDelete) };
     }).filter(group => group.tasks.length > 0);
     setTaskGroups(updatedGroups);
-    if (taskToTrash) {
-      setTrash([...trash, taskToTrash]);
-    }
+    if (taskToTrash) setTrash([...trash, taskToTrash]);
   };
-
   const handleRestoreTask = (taskToRestore) => {
     handleAddTask(taskToRestore);
     setTrash(trash.filter(task => task.id !== taskToRestore.id));
   };
-
   const handlePermanentlyDeleteTask = (taskIdToDelete) => {
     if (window.confirm('Эту задачу нельзя будет восстановить. Удалить?')) {
       setTrash(trash.filter(task => task.id !== taskIdToDelete));
     }
   };
-
   const handleEmptyTrash = () => {
     if (trash.length > 0 && window.confirm(`Вы уверены, что хотите навсегда удалить все задачи (${trash.length} шт.) из корзины? Это действие необратимо.`)) {
       setTrash([]);
     }
   };
-
   const handleSetEditMode = (taskId) => setEditingTaskId(taskId);
   const handleCancelEdit = () => setEditingTaskId(null);
-
   const totalBalance = taskGroups.reduce((total, group) => {
     const groupTotal = group.tasks.reduce((groupSum, task) => {
       if (task.isCompleted) return groupSum;
@@ -86,27 +71,16 @@ function App() {
   return (
     <div>
       <Header />
-      <Summary total={totalBalance} />
       
-      <div className="trash-section-wrapper">
-        <div className="trash-toggle-wrapper">
-          <button onClick={() => setIsTrashVisible(!isTrashVisible)} className="trash-toggle-btn">
-            <TrashIcon />
-            <span>Корзина</span>
-            {trash.length > 0 && <span className="trash-counter">{trash.length}</span>}
-          </button>
-        </div>
-        {isTrashVisible && (
-          <TrashBin
-            trash={trash}
-            onRestoreTask={handleRestoreTask}
-            onPermanentlyDeleteTask={handlePermanentlyDeleteTask}
-            onEmptyTrash={handleEmptyTrash}
-          />
-        )}
+      {/* --- ИЗМЕНЕНИЕ: Общий контейнер для всех элементов управления --- */}
+      <div className="main-controls-wrapper">
+        <Summary total={totalBalance} />
+        
+        {/* Новая структура кнопки корзины */}
+        
+        
+        <TaskForm onAddTask={handleAddTask} />
       </div>
-
-      <TaskForm onAddTask={handleAddTask} />
       <TaskList
         groups={taskGroups}
         editingTaskId={editingTaskId}
@@ -116,6 +90,24 @@ function App() {
         onToggleTask={handleToggleTask}
         onDeleteTask={handleDeleteTask}
       />
+      <div className="main-controls-wrapper">
+      <button onClick={() => setIsTrashVisible(!isTrashVisible)} className="trash-toggle-bar">
+          <span className="trash-bar-label">
+            <TrashIcon />
+            <span>Корзина</span>
+          </span>
+          {trash.length > 0 && <span className="trash-bar-counter">{trash.length}</span>}
+        </button>
+
+        {isTrashVisible && (
+          <TrashBin
+            trash={trash}
+            onRestoreTask={handleRestoreTask}
+            onPermanentlyDeleteTask={handlePermanentlyDeleteTask}
+            onEmptyTrash={handleEmptyTrash}
+          />
+        )}
+      </div>
     </div>
   );
 }

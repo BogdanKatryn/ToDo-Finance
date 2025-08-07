@@ -1,6 +1,5 @@
 .trash-bin-card {
   max-width: 800px;
-  margin: 0 auto 20px auto; /* Изменен margin, чтобы не было отступа сверху */
   padding: 20px 25px;
   background-color: #1e293b;
   border-radius: 12px;
