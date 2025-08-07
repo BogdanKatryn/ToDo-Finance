@@ -21,7 +21,7 @@ function TaskItem({ task, isEditing, onSetEditMode, onUpdateTask, onCancelEdit, 
 
   const handleDeleteClick = (e) => {
     e.stopPropagation();
-    if (window.confirm(`Вы уверены, что хотите удалить задачу "${task.name}"?`)) {
+    if (window.confirm(`Ви впевнені, що хочете видалити завдання "${task.name}"?`)) {
       onDeleteTask(task.id);
     }
   };
@@ -34,11 +34,11 @@ function TaskItem({ task, isEditing, onSetEditMode, onUpdateTask, onCancelEdit, 
             onClick={handleToggleClick} 
             className="task-status-toggle"
             disabled={task.isFixed} 
-            title={task.isFixed ? "Фиксированные суммы нельзя выполнить" : "Отметить как выполненное"}
+            title={task.isFixed ? "Фіксовані суми не можна виконати" : "Відзначити як виконане"}
           />
           <span className="task-name">{task.name}</span>
           {task.isFixed && (
-            <span className="fixed-icon" title="Фиксированная сумма">
+            <span className="fixed-icon" title="Фіксована сума">
               <FixedIcon />
             </span>
           )}
@@ -48,10 +48,10 @@ function TaskItem({ task, isEditing, onSetEditMode, onUpdateTask, onCancelEdit, 
             {task.type === 'income' ? '+' : '-'} {task.amount.toLocaleString('ru-RU', { minimumFractionDigits: 2 })} ₴
           </span>
           <div className="task-actions">
-            <button title="Редактировать" onClick={handleEditClick} className="action-btn-edit">
+            <button title="Редагувати" onClick={handleEditClick} className="action-btn-edit">
               <EditIcon />
             </button>
-            <button title="Удалить" onClick={handleDeleteClick} className="action-btn-delete">
+            <button title="Видалити" onClick={handleDeleteClick} className="action-btn-delete">
               <DeleteIcon />
             </button>
           </div>

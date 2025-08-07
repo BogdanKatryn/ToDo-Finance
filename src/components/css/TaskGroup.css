@@ -18,20 +18,17 @@
   margin: 0;
   }
 
-  /* Делаем заголовок гибким контейнером, чтобы разнести элементы по краям */
 .task-group-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Стили для итоговой суммы в заголовке группы */
 .group-total {
   font-size: 18px;
   font-weight: bold;
 }
 
-/* Классы для цвета итоговой суммы (как в Summary.css) */
 .group-total.positive {
   color: #22c55e;
 }

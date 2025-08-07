@@ -1,8 +1,6 @@
 .task-item-wrapper {
-  /* Пустой контейнер-обертка */
 }
 
-/* Основной контейнер одной задачи */
 .task-item {
   display: flex;
   justify-content: space-between;
@@ -12,12 +10,10 @@
   transition: all 0.2s ease;
 }
 
-/* Состояние, когда задача редактируется */
 .task-item.is-editing {
   border: 2px solid #006aff;
 }
 
-/* Стили для выполненной задачи */
 .task-item.is-completed {
   text-decoration: line-through;
   opacity: 0.5;
@@ -32,14 +28,12 @@
   font-size: 14px;
 }
 
-/* Левая и правая части задачи */
 .task-main-info, .task-details {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Стили для радио-кнопки выполнения */
 .task-status-toggle {
   width: 20px;
   height: 20px;
@@ -51,13 +45,12 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  flex-shrink: 0; /* Запрещаем кнопке сжиматься */
+  flex-shrink: 0;
 }
 .task-status-toggle:hover {
   border-color: #94a3b8;
 }
 
-/* Стили для заблокированной кнопки */
 .task-status-toggle:disabled {
   cursor: not-allowed;
   opacity: 0.4;
@@ -72,7 +65,6 @@
   font-weight: 500;
 }
 
-/* Стили для иконки скрепки */
 .fixed-icon {
   color: #94a3b8;
   display: flex;
@@ -91,16 +83,13 @@
   color: #ef4444;
 }
 
-/* Контейнер для кнопок-иконок */
 .task-actions {
   display: flex;
   gap: 8px;
-  opacity: 1; /* ВАШЕ ИЗМЕНЕНИЕ: иконки всегда видны */
+  opacity: 1;
   transition: opacity 0.2s ease;
 }
 
-/* --- ВАШИ НОВЫЕ СТИЛИ ДЛЯ КНОПОК --- */
-/* Общий базовый стиль для обеих кнопок */
 .action-btn-edit,
 .action-btn-delete {
   background: none;
@@ -110,15 +99,13 @@
   padding: 0;
   display: flex;
   align-items: center;
-  transition: color 0.2s ease; /* Плавный переход цвета */
+  transition: color 0.2s ease;
 }
 
-/* Цвет при наведении для кнопки редактирования */
 .action-btn-edit:hover {
   color: #3b82f6;
 }
 
-/* Цвет при наведении для кнопки удаления */
 .action-btn-delete:hover {
   color: #ff0000;
 }

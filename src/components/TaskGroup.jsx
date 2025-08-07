@@ -1,5 +1,4 @@
 import TaskItem from './TaskItem';
-// Убедитесь, что путь к CSS правильный для вашей структуры
 import './css/TaskGroup.css'; 
 
 function TaskGroup({ group, editingTaskId, onSetEditMode, onUpdateTask, onCancelEdit, onToggleTask, onDeleteTask }) {

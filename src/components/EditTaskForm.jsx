@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './css/EditTaskForm.css';
 
-// --- Иконки для кнопок ---
 const CloseIcon = () => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -37,14 +36,12 @@ const SaveIcon = () => (
 );
 
 function EditTaskForm({ task, onUpdateTask, onCancelEdit }) {
-  // --- Состояния для полей ввода ---
   const [group, setGroup] = useState(task.group);
   const [name, setName] = useState(task.name);
   const [amount, setAmount] = useState(task.amount);
   const [isIncome, setIsIncome] = useState(task.type === 'income');
   const [isFixed, setIsFixed] = useState(task.isFixed);
 
-  // --- Обработчик отправки формы ---
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedData = {
@@ -61,43 +58,37 @@ function EditTaskForm({ task, onUpdateTask, onCancelEdit }) {
     <div className="edit-task-form-wrapper">
       <form className="edit-task-form" onSubmit={handleSubmit}>
         
-        {/* --- ИЗМЕНЕНИЕ №1 --- */}
-        {/* Это поле теперь находится само по себе и будет занимать всю ширину */}
         <input
           type="text"
           className="edit-input"
           value={group}
           onChange={(e) => setGroup(e.target.value)}
-          placeholder="Название группы"
+          placeholder="Назва групи"
         />
         
-        {/* --- ИЗМЕНЕНИЕ №2 --- */}
-        {/* А эти два поля остались в контейнере .form-row */}
         <div className="form-row">
           <input
             type="text"
             className="edit-input"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Название задачи"
+            placeholder="Назва задачі"
           />
           <input
             type="number"
             className="edit-input"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            placeholder="Сумма"
+            placeholder="Сума"
           />
         </div>
         
-        {/* Переключатель "Витрата / Дохід" */}
         <div className={`type-selector ${isIncome ? 'income-active' : ''}`}>
           <div className="sliding-background"></div>
           <button type="button" onClick={() => setIsIncome(false)}>Витрата</button>
           <button type="button" onClick={() => setIsIncome(true)}>Дохід</button>
         </div>
 
-        {/* Чекбокс "Фиксированная сумма" */}
         <div className="fixed-amount">
           <input
             type="checkbox"
@@ -108,12 +99,11 @@ function EditTaskForm({ task, onUpdateTask, onCancelEdit }) {
           <label htmlFor={`is-fixed-${task.id}`}>Фіксована сума</label>
         </div>
         
-        {/* Кнопки управления */}
         <div className="form-actions">
-          <button title="Отменить" type="button" onClick={onCancelEdit} className="btn-icon cancel">
+          <button title="Скасувати" type="button" onClick={onCancelEdit} className="btn-icon cancel">
             <CloseIcon />
           </button>
-          <button title="Сохранить" type="submit" className="btn-icon save">
+          <button title="Зберегти" type="submit" className="btn-icon save">
             <SaveIcon />
           </button>
         </div>

@@ -41,14 +41,14 @@ function TaskForm({ onAddTask }) {
           className="expense"
           onClick={() => setIsIncome(false)}
         >
-          Расход
+          Витрата
         </button>
         <button
           type="button"
           className="income"
           onClick={() => setIsIncome(true)}
         >
-          Доход
+          Дохід
         </button>
       </div>
 
@@ -60,10 +60,10 @@ function TaskForm({ onAddTask }) {
 
       <div className="fixed-amount">
         <input type="checkbox" id="is-fixed" checked={isFixed} onChange={(e) => setIsFixed(e.target.checked)} />
-        <label htmlFor="is-fixed">Фиксированная сумма</label>
+        <label htmlFor="is-fixed">Фіксована сума</label>
       </div>
       
-      <button type="submit">Добавить задачу</button>
+      <button type="submit">Додати завдання</button>
     </form>
   );
 }

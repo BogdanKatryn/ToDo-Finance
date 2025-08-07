@@ -11,7 +11,7 @@ const listStyle = {
 
 function TaskList({ groups, editingTaskId, onSetEditMode, onUpdateTask, onCancelEdit, onToggleTask, onDeleteTask }) {
   if (!groups || groups.length === 0) {
-    return <p style={{ textAlign: 'center', color: '#94a3b8' }}>Пока нет ни одной задачи. Добавьте первую!</p>;
+    return <p style={{ textAlign: 'center', color: '#94a3b8' }}>Поки що немає жодного завдання. Додати першу!</p>;
   }
   
   return (

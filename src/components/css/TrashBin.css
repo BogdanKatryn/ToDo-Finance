@@ -76,7 +76,6 @@
 .btn-trash.delete-final { color: #ef4444; }
 .btn-trash.delete-final:hover { background-color: rgba(239, 68, 68, 0.1); }
 
-/* --- НОВЫЕ СТИЛИ --- */
 .trash-bin-footer {
   margin-top: 20px;
   padding-top: 15px;

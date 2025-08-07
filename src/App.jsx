@@ -15,7 +15,6 @@ function App() {
   const [trash, setTrash] = useState([]);
   const [isTrashVisible, setIsTrashVisible] = useState(false);
 
-  // Все ваши функции-обработчики (handleAddTask, handleUpdateTask и т.д.) остаются без изменений
   const handleAddTask = (newTask) => {
     const taskWithStatus = { ...newTask, isCompleted: false };
     const existingGroup = taskGroups.find(group => group.name.toLowerCase() === taskWithStatus.group.toLowerCase());
@@ -49,12 +48,12 @@ function App() {
     setTrash(trash.filter(task => task.id !== taskToRestore.id));
   };
   const handlePermanentlyDeleteTask = (taskIdToDelete) => {
-    if (window.confirm('Эту задачу нельзя будет восстановить. Удалить?')) {
+    if (window.confirm('Це завдання не можна буде відновити. Видалити?')) {
       setTrash(trash.filter(task => task.id !== taskIdToDelete));
     }
   };
   const handleEmptyTrash = () => {
-    if (trash.length > 0 && window.confirm(`Вы уверены, что хотите навсегда удалить все задачи (${trash.length} шт.) из корзины? Это действие необратимо.`)) {
+    if (trash.length > 0 && window.confirm(`Ви впевнені, що хочете видалити назавжди всі завдання (${trash.length} шт.) з кошика? Ця дія необоротна.`)) {
       setTrash([]);
     }
   };
@@ -72,13 +71,8 @@ function App() {
     <div>
       <Header />
       
-      {/* --- ИЗМЕНЕНИЕ: Общий контейнер для всех элементов управления --- */}
       <div className="main-controls-wrapper">
         <Summary total={totalBalance} />
-        
-        {/* Новая структура кнопки корзины */}
-        
-        
         <TaskForm onAddTask={handleAddTask} />
       </div>
       <TaskList
@@ -94,7 +88,7 @@ function App() {
       <button onClick={() => setIsTrashVisible(!isTrashVisible)} className="trash-toggle-bar">
           <span className="trash-bar-label">
             <TrashIcon />
-            <span>Корзина</span>
+            <span>Кошик</span>
           </span>
           {trash.length > 0 && <span className="trash-bar-counter">{trash.length}</span>}
         </button>
