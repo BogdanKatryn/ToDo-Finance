@@ -5,7 +5,7 @@ function Header() {
     return (
       <header className="main-header">
         <center>
-          <h1>Todo Finance</h1>
+          <h1>ToDo Finance</h1>
           <p>Керуй своїми фінансами легко та ефективно.</p>
         </center>
         

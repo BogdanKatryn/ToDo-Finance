@@ -1,6 +1,5 @@
 .task-form {
   max-width: 800px;
-  margin: 20px auto;
   padding: 25px;
   background-color:#1e293b;
   border-radius: 12px;
@@ -127,6 +126,11 @@
   transform: scale(1);
 }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .task-form button[type="submit"] {
   padding: 12px 20px;

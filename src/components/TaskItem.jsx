@@ -21,7 +21,7 @@ function TaskItem({ task, isEditing, onSetEditMode, onUpdateTask, onCancelEdit, 
 
   const handleDeleteClick = (e) => {
     e.stopPropagation();
-    if (window.confirm(`Ви впевнені, що хочете видалити завдання "${task.name}"?`)) {
+    if (window.confirm(`Ви впевнені, що хочете видалити завдання "${task.title}"?`)) {
       onDeleteTask(task.id);
     }
   };
@@ -36,7 +36,7 @@ function TaskItem({ task, isEditing, onSetEditMode, onUpdateTask, onCancelEdit, 
             disabled={task.isFixed} 
             title={task.isFixed ? "Фіксовані суми не можна виконати" : "Відзначити як виконане"}
           />
-          <span className="task-name">{task.name}</span>
+          <span className="task-name">{task.title}</span>
           {task.isFixed && (
             <span className="fixed-icon" title="Фіксована сума">
               <FixedIcon />

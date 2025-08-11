@@ -15,7 +15,7 @@ function TrashBin({ trash, onRestoreTask, onPermanentlyDeleteTask, onEmptyTrash 
             {trash.map(task => (
               <div key={task.id} className="trash-item">
                 <div className="trash-item-info">
-                  <span className="trash-item-name">{task.name}</span>
+                  <span className="trash-item-name">{task.title}</span>
                   <span className="trash-item-group">(Група: {task.group})</span>
                 </div>
                 <div className="trash-item-actions">

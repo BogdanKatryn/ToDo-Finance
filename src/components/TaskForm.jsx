@@ -18,7 +18,7 @@ function TaskForm({ onAddTask }) {
     const newTransaction = {
       type: isIncome ? 'income' : 'expense',
       group: group.trim(),
-      name: taskName.trim(),
+      title: taskName.trim(),   // <-- здесь изменено
       amount: Math.abs(parseFloat(amount)),
       isFixed: isFixed,
       id: uuidv4()
@@ -31,25 +31,10 @@ function TaskForm({ onAddTask }) {
 
   return (
     <form className="task-form" onSubmit={handleSubmit}>
-      
       <div className={`type-selector ${isIncome ? 'income-active' : ''}`}>
-        
         <div className="sliding-background"></div>
-
-        <button
-          type="button"
-          className="expense"
-          onClick={() => setIsIncome(false)}
-        >
-          Витрата
-        </button>
-        <button
-          type="button"
-          className="income"
-          onClick={() => setIsIncome(true)}
-        >
-          Дохід
-        </button>
+        <button type="button" className="expense" onClick={() => setIsIncome(false)}>Витрата</button>
+        <button type="button" className="income" onClick={() => setIsIncome(true)}>Дохід</button>
       </div>
 
       <div className="inputs-group">
