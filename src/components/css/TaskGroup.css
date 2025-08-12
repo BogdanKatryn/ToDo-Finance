@@ -40,3 +40,32 @@
 .group-total.zero {
   color: #e2e8f0;
 }
+
+@media (max-width: 420px) {
+  .task-group-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #e2e8f0;
+    margin: 0;
+    }
+
+  .group-total {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  .group-total.positive {
+    color: #22c55e;
+    font-size: 14px;
+  }
+  
+  .group-total.negative {
+    color: #ef4444;
+    font-size: 14px;
+  }
+  
+  .group-total.zero {
+    color: #e2e8f0;
+    font-size: 14px;
+  }
+}

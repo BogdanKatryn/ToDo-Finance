@@ -109,3 +109,24 @@
 .action-btn-delete:hover {
   color: #ff0000;
 }
+
+@media (max-width: 420px) {
+  .task-name {
+    color: #e2e8f0;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .task-amount {
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .task-amount.income {
+    color: #22c55e;
+    font-size: 12px;
+  }
+  .task-amount.expense {
+    color: #ef4444;
+    font-size: 12px;
+  }
+}

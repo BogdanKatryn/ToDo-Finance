@@ -30,3 +30,32 @@
 .summary-value.zero {
   color: #e2e8f0;
 }
+
+@media (max-width: 420px) {
+  
+  .summary-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #cbd5e1;
+  }
+  
+  .summary-value {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .summary-value.positive {
+    color: #22c55e;
+    font-size: 16px;
+  }
+  
+  .summary-value.negative {
+    color: #ef4444;
+    font-size: 16px;
+  }
+  
+  .summary-value.zero {
+    color: #e2e8f0;
+    font-size: 16px;
+  }
+}
