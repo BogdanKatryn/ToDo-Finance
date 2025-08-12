@@ -43,11 +43,19 @@ export default function Auth({ onLogin }: AuthProps) {
   }
 
   const handleGitHubLogin = async () => {
-    setLoading(true)
-    const { error } = await supabase.auth.signInWithOAuth({ provider: 'github' })
-    if (error) alert(error.message)
-    setLoading(false)
-  }
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',
+      options: {
+        redirectTo: 'https://bogdankatryn.github.io/ToDo-Finance/'
+      }
+    });
+    setLoading(false);
+    if (error) {
+      console.error('GitHub OAuth ошибка:', error.message);
+      alert(error.message);
+    }
+  };
 
   const signInWithGoogle = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
