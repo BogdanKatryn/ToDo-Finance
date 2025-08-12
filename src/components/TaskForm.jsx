@@ -12,7 +12,7 @@ function TaskForm({ onAddTask }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!taskName.trim() || !amount || !group.trim()) {
-      alert('Пожалуйста, заполните название группы, задачи и сумму!');
+      alert('Будь ласка, заповніть назву групи, завдання та суму!');
       return;
     }
     const newTransaction = {
@@ -38,9 +38,9 @@ function TaskForm({ onAddTask }) {
       </div>
 
       <div className="inputs-group">
-        <input type="text" placeholder="Название группы" value={group} onChange={(e) => setGroup(e.target.value)} className='placeholder-color' />
-        <input type="text" placeholder="Название задачи" value={taskName} onChange={(e) => setTaskName(e.target.value)} className='placeholder-color' />
-        <input type="number" placeholder="Сумма" min="0" value={amount} onChange={(e) => setAmount(e.target.value)} className='placeholder-color' />
+        <input type="text" placeholder="Назва групи" value={group} onChange={(e) => setGroup(e.target.value)} className='placeholder-color' />
+        <input type="text" placeholder="Назва задачі" value={taskName} onChange={(e) => setTaskName(e.target.value)} className='placeholder-color' />
+        <input type="number" placeholder="Сума" min="0" value={amount} onChange={(e) => setAmount(e.target.value)} className='placeholder-color' />
       </div>
 
       <div className="fixed-amount">
