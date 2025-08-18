@@ -25,7 +25,6 @@ function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Аутентификация и загрузка пользователя
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
@@ -41,17 +40,15 @@ function App() {
     };
   }, []);
 
-  // Загрузка задач пользователя из Supabase
   useEffect(() => {
     async function fetchTasks() {
       if (!user) return;
   
-      // Завантажуємо не видалені (основні) задачі
       const { data: activeTasks, error: activeError } = await supabase
       .from('tasks')
       .select('*')
       .eq('user_id', user.id)
-      .eq('is_deleted', false);  // <- ЭТО ОБЯЗАТЕЛЬНО!
+      .eq('is_deleted', false);
 
     const { data: trashedTasks, error: trashError } = await supabase
       .from('tasks')
@@ -64,7 +61,6 @@ function App() {
         return;
       }
   
-      // Групуємо активні задачі як раніше
       const groupsMap = {};
   
       activeTasks.forEach(task => {
@@ -88,7 +84,7 @@ function App() {
       });
   
       setTaskGroups(Object.values(groupsMap));
-      setTrash(trashedTasks); // встановлюємо корзину в state
+      setTrash(trashedTasks);
     }
   
     fetchTasks();
@@ -170,7 +166,6 @@ function App() {
   };
 
   const handleToggleTask = async (taskId) => {
-    // Находим задачу и меняем isCompleted локально и в базе
     let toggledTask = null;
     for (const group of taskGroups) {
       const task = group.tasks.find(t => t.id === taskId);
@@ -234,10 +229,8 @@ function App() {
       return;
     }
   
-    // Оновлюємо локально
     setTrash(trash.filter(task => task.id !== taskToRestore.id));
     
-    // Перезавантажуємо таски або додаємо вручну:
     setTaskGroups(prev => {
       const existingGroup = prev.find(g => g.name.toLowerCase() === taskToRestore.group_name.toLowerCase());
       if (existingGroup) {
