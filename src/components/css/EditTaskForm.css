@@ -1,11 +1,15 @@
-.edit-task-form-wrapper {
-    padding: 15px;
-    margin: 10px;
-    border: 2px solid #006aff; 
-    border-radius: 10px; 
-    background-color: #1e293b; 
-  }
-  
+.edit-task-form-wrapper, .edit-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 10px auto;
+  border: 2px solid #006aff;
+  border-radius: 10px;
+  background-color: #1e293b;
+  display: flex;
+  flex-direction: column;
+}
+
   .edit-task-form {
     display: flex;
     flex-direction: column;
@@ -106,4 +110,10 @@
   .btn-icon.save:hover { 
     background-color: rgba(34, 197, 94, 0.1);
     border-color: #22c55e;
+  }
+
+  @media (max-width: 550px) {
+    .form-row{
+      flex-direction: column;
+    }
   }

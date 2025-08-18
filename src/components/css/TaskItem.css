@@ -1,4 +1,6 @@
 .task-item-wrapper {
+  width: 100%;
+  max-width: 800px;
 }
 
 .task-item {
@@ -130,3 +132,10 @@
     font-size: 12px;
   }
 }
+
+/* @media (max-width: 550px) {
+  .task-item-wrapper {
+    width: 100%;
+    max-width: 800px;
+  }
+} */
